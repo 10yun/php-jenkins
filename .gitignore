@@ -1,1 +1,6 @@
 *.zip
+.idea
+node_modules
+vendor
+logs
+docs/.vuepress/dist

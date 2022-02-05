@@ -2,7 +2,10 @@
 ```php
 use Yuan1994/Jenkins/Jenkins;
 
-$config = ['username' => 'jenkins User ID', 'password' => 'Jenkins API token'];
+$config = [
+    'username' => 'jenkins User ID', 
+    'password' => 'Jenkins API token'
+];
 
 $jenkins = new Jenkins('http://localhost:8080', $config);
 ```
@@ -12,7 +15,7 @@ $jenkins = new Jenkins('http://localhost:8080', $config);
 <?php
 
 /**
- * Jenkins-php配置信息
+ * Jenkins-php 配置信息
  */
 return [
     // Jenkins User ID

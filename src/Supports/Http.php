@@ -164,10 +164,10 @@ class Http
     public function parseXml($content)
     {
         $xmlParse = xml_parser_create();
-        if(!xml_parse($xmlParse, $content, true)){
+        if (!xml_parse($xmlParse, $content, true)) {
             xml_parser_free($xmlParse);
             return $content;
-        }else {
+        } else {
             return json_decode(json_encode(simplexml_load_string($content)), true);
         }
     }

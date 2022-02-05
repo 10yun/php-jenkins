@@ -68,5 +68,4 @@ class URL
     const JENKINS_EXIT = 'exit';
     const SAFE_EXIT = 'safeExit';
     const CANCEL_QUIET_DOWN = 'cancelQuietDown';
-
 }

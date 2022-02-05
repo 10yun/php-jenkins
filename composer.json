@@ -4,20 +4,25 @@
     "type": "library",
     "authors": [
         {
-            "name": "tianpian",
-            "email": "tianpian@aliyun.com"
+            "name": "trystan",
+            "email": "343196936@qq.com"
         }
     ],
-    "keywords": ["jenkins", "cicd", "rest", "jenkins-php"],
+    "keywords": [
+        "jenkins",
+        "cicd",
+        "rest",
+        "jenkins-php"
+    ],
     "homepage": "http://yuan1994.github.io/jenkins-php",
     "require": {
-        "php": ">=5.6",
+        "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.3",
         "monolog/monolog": "^1.23"
     },
     "autoload": {
         "psr-4": {
-            "Yuan1994\\Jenkins\\": "src"
+            "shiyunJenkins\\": "src"
         }
     },
     "require-dev": {
@@ -26,7 +31,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Yuan1994\\Jenkins\\Tests\\": "tests"
+            "shiyunJenkins\\Tests\\": "tests"
         }
     }
 }

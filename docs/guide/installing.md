@@ -12,7 +12,7 @@ composer require yuan1994/jenkins-php
 文档使用的是 [vuepress](https://vuepress.vuejs.org)
 
 `yarn: `
-```
+```sh
 yarn install
 yarn build:docs
 ```

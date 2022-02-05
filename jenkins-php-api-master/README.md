@@ -2,25 +2,21 @@ Jenkins PHP API
 ===============
 
 
-Jenkins PHP API is a set of classes designed to interact with Jenkins CI using its API.
+Jenkins PHP API 是一组类，旨在使用其API与Jenkins CI进行交互。
 
-Installation
+## 安装
 ------------
 
-The recommended way to install Jenkins PHP API is through [Composer](http://getcomposer.org).
+安装 composer [Composer](http://getcomposer.org).
+
+通过 composer 下载依赖
 
 ```bash
-curl -sS https://getcomposer.org/installer | php
-```
-
-Then, run the Composer command to install the latest version:
-
-```bash
-composer.phar require jenkins-khan/jenkins-api
+composer require shiyun/php-jenkins
 ```
 
 
-Basic Usage
+## 基本用法
 -----------
 
 
@@ -36,8 +32,7 @@ If your Jenkins needs authentication, you need to pass a URL like this : `'http:
 
 Here are some examples of how to use it:
 
-
-Get the color of the job
+## 获取job任务的颜色
 ------------------------
 
 ```php
@@ -47,7 +42,7 @@ Get the color of the job
 ```
 
 
-Launch a Job
+## 开展工作
 ------------
 
 ```php
@@ -57,7 +52,7 @@ Launch a Job
 ```
 
 
-List the jobs of a given view
+## 获取视图的作业
 -----------------------------
 
 ```php
@@ -71,7 +66,7 @@ List the jobs of a given view
     //string(11) "fedora-pull"
 ```
 
-List builds and their status
+## 获取构建及其状态
 ----------------------------
 
 ```php
@@ -86,8 +81,8 @@ List builds and their status
     //string(7) "FAILURE"
 ```
 
+## 检查jenkins是否空闲
 
-Check if Jenkins is available
 -----------------------------
 
 ```php
@@ -98,7 +93,7 @@ Check if Jenkins is available
 For more information, see the [Jenkins API](https://wiki.jenkins-ci.org/display/JENKINS/Remote+access+API).
 
 
-Coding standards
+## 编码标准
 ----------------
 
 This projects follows PSR-0, PSR-1, PSR-2, PSR-4

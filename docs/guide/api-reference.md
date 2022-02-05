@@ -4,11 +4,11 @@
 `Jenkins::getInfo($item = '', $query = '', $folderUrl = '') : array|mixed`
 
 ### 参数
-名称 | 类型 | 是否必填 | 备注
-:--- | :---: | :---: | :---
-$item | string | N | 主节点信息中的某项值
-$query | string | N | 附加的查询参数
-$folderUrl | string | N | 根文件夹名称
+| 名称       |  类型  | 是否必填 | 备注                 |
+| :--------- | :----: | :------: | :------------------- |
+| $item      | string |    N     | 主节点信息中的某项值 |
+| $query     | string |    N     | 附加的查询参数       |
+| $folderUrl | string |    N     | 根文件夹名称         |
 
 ### 返回值
 ```json
