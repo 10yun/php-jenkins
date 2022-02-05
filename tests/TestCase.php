@@ -38,7 +38,7 @@ class TestCase extends BaseTestCase
         $data = [];
         if (is_array($mockData)) {
             if (isset($mockData[0])) {
-                $basePath = __DIR__ .'/data/';
+                $basePath = __DIR__ . '/data/';
                 foreach ($mockData as $mockItem) {
                     if (is_array($mockItem)) {
                         // if the data source is array
@@ -115,7 +115,7 @@ class TestCase extends BaseTestCase
      */
     protected function getArrayFromFile($filename)
     {
-        $basePath = __DIR__ .'/data/';
+        $basePath = __DIR__ . '/data/';
         if (is_file(($file = $basePath . $filename))) {
             $ext = pathinfo($file, PATHINFO_EXTENSION);
             switch ($ext) {

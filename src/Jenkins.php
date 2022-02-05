@@ -90,9 +90,9 @@ class Jenkins
      */
     protected function buildUrl($url, $params = [])
     {
-        return preg_replace_callback('/\{(.*?)\}/', function($m) use ($params){
+        return preg_replace_callback('/\{(.*?)\}/', function ($m) use ($params) {
             return $params[$m[1]];
-        } , $url);
+        }, $url);
     }
 
     /**
@@ -200,7 +200,6 @@ class Jenkins
                     $this->crumb = $response;
                 }
             } catch (\Exception $e) {
-
             }
         }
 

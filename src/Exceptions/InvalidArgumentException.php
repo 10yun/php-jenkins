@@ -11,5 +11,4 @@ namespace Yuan1994\Jenkins\Exceptions;
  */
 class InvalidArgumentException extends Exception
 {
-
 }

@@ -326,7 +326,7 @@ trait Job
         if ($response->getStatusCode() == 404) {
             $parentFolder = substr($paths['folder_url'], 4, -1);
             throw new JenkinsException("parent folder[{$parentFolder}] does "
-                ."exist.");
+                . "exist.");
         }
 
         return $this->getResponseTrueOrStatusCode($response, 200);

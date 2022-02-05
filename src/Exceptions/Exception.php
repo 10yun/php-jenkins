@@ -9,5 +9,4 @@ namespace Yuan1994\Jenkins\Exceptions;
  */
 class Exception extends \Exception
 {
-
 }

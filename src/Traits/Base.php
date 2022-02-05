@@ -126,7 +126,7 @@ trait Base
     public function runScript($script, $node = null)
     {
         $magicStr = ')]}.';
-        $printMagicStr = 'print("'. $magicStr .'")';
+        $printMagicStr = 'print("' . $magicStr . '")';
         $data = [
             'script' => $script . "\n" . $printMagicStr,
         ];
@@ -160,7 +160,7 @@ trait Base
         $install = 'Jenkins.instance.updateCenter.getPlugin("' . $name . '").deploy();';
         if ($includeDependencies) {
             $install = 'Jenkins.instance.updateCenter.getPlugin("' . $name . '")'
-                       . '.getNeededDependencies().each{it.deploy()};' . $install;
+                . '.getNeededDependencies().each{it.deploy()};' . $install;
         }
 
         $res = $this->runScript($install);

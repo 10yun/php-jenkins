@@ -24,7 +24,7 @@ trait Node
             'GET', $this->buildUrl(URL::NODE_LIST, compact('depth')),
         ]);
 
-        return array_map(function($node) {
+        return array_map(function ($node) {
             return [
                 'name' => $node['displayName'],
                 'offline' => $node['offline'],
@@ -142,9 +142,14 @@ trait Node
      * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
      */
     public function createNode(
-        $name, $numExecutors = 2, $nodeDescription = null,
-        $remoteFS = '/var/lib/jenkins', $labels = null, $exclusive = false,
-        $launcher = URL::LAUNCHER_COMMAND, $launcherParams = []
+        $name,
+        $numExecutors = 2,
+        $nodeDescription = null,
+        $remoteFS = '/var/lib/jenkins',
+        $labels = null,
+        $exclusive = false,
+        $launcher = URL::LAUNCHER_COMMAND,
+        $launcherParams = []
     ) {
         if ($this->nodeExists($name)) {
             throw new JenkinsException("node[{$name}] already exists");
@@ -220,5 +225,4 @@ trait Node
 
         return $this->getResponseTrueOrStatusCode($response, 200);
     }
-
 }
