@@ -80,7 +80,6 @@ php-jenkins 主要实现了以下功能：
 - Create/Delete/Update folders
 - Get builded last git version information
 
-
 ## 更新日志
 
 [更新日期](./docs/changelog.md) 
