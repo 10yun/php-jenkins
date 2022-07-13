@@ -69,7 +69,7 @@ trait Job
 
         $paths = $this->getJobFolder($data['name']);
         $response = $this->jenkinsOpen([
-            'GET', $this->buildUrl(URL::ALL_BUILDS, $paths)
+            'GET', $this->buildUrl(URL::BUILD_ALLS, $paths)
         ]);
 
         if ($response) {
@@ -219,7 +219,7 @@ trait Job
         ];
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::RENAME_JOB, $params),
+            'POST', $this->buildUrl(URL::API_JOB_RENAME, $params),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response, 200);
@@ -235,7 +235,7 @@ trait Job
     {
         $paths = $this->getJobFolder($name);
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::DELETE_JOB, $paths),
+            'POST', $this->buildUrl(URL::API_JOB_DELETE, $paths),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response, 200);
@@ -251,7 +251,7 @@ trait Job
     {
         $paths = $this->getJobFolder($name);
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::ENABLE_JOB, $paths),
+            'POST', $this->buildUrl(URL::API_JOB_ENABLE, $paths),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response, 200);
@@ -268,7 +268,7 @@ trait Job
     {
         $paths = $this->getJobFolder($name);
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::DISABLE_JOB, $paths),
+            'POST', $this->buildUrl(URL::API_JOB_DISABLE, $paths),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response, 200);
@@ -290,7 +290,7 @@ trait Job
         }
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CREATE_JOB, $paths), [
+            'POST', $this->buildUrl(URL::API_JOB_CREATE, $paths), [
                 'body' => $configXml,
                 'headers' => ['Content-Type' => URL::DEFAULT_CONTENT_TYPE],
             ]
@@ -313,7 +313,7 @@ trait Job
             throw new JenkinsException("folder[{$name}] already exists");
         }
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CREATE_JOB, $paths), [
+            'POST', $this->buildUrl(URL::API_JOB_CREATE, $paths), [
                 'form_params' => [
                     'mode' => URL::FOLDER_CLASS,
                     'name' => $paths['short_name'],
@@ -342,7 +342,7 @@ trait Job
     {
         $paths = $this->getJobFolder($name);
         $response = $this->jenkinsRequest([
-            'GET', $this->buildUrl(URL::CONFIG_JOB, $paths)
+            'GET', $this->buildUrl(URL::API_JOB_CONFIG, $paths)
         ]);
 
         if ($response->getStatusCode() != 200) {
@@ -363,7 +363,7 @@ trait Job
     {
         $paths = $this->getJobFolder($name);
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CONFIG_JOB, $paths), [
+            'POST', $this->buildUrl(URL::API_JOB_CONFIG, $paths), [
                 'body' => $configXml,
                 'headers' => ['Content-Type' => URL::DEFAULT_CONTENT_TYPE],
             ]
@@ -382,7 +382,7 @@ trait Job
     {
         $paths = $this->getJobFolder($name);
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CONFIG_JOB, $paths),
+            'POST', $this->buildUrl(URL::API_JOB_CONFIG, $paths),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response, 200);

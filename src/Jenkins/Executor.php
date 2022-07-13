@@ -6,16 +6,11 @@ use shiyunJK\Jenkins;
 
 class Executor
 {
-
+    use TraitCom;
     /**
      * @var \stdClass
      */
     private $executor;
-
-    /**
-     * @var Jenkins
-     */
-    protected $jenkins;
 
     /**
      * @var string
@@ -91,25 +86,5 @@ class Executor
     public function stop()
     {
         $this->getJenkins()->stopExecutor($this);
-    }
-
-    /**
-     * @return Jenkins
-     */
-    public function getJenkins()
-    {
-        return $this->jenkins;
-    }
-
-    /**
-     * @param Jenkins $jenkins
-     *
-     * @return Job
-     */
-    public function setJenkins(Jenkins $jenkins)
-    {
-        $this->jenkins = $jenkins;
-
-        return $this;
     }
 }

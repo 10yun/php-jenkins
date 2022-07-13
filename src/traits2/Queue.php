@@ -1,14 +1,16 @@
 <?php
 
+use shiyunJK\Consts\URL;
+
 trait Queue
 {
     /**
-     * @return Jenkins\Queue
+     * @return \shiyunJK\Jenkins\Queue
      * @throws \RuntimeException
      */
     public function getQueue()
     {
-        $url  = sprintf('%s/queue/api/json', $this->baseUrl);
+        $url  = $this->baseUrl . URL::API_QUEUE_INFO;
         $curl = curl_init($url);
 
         curl_setopt($curl, \CURLOPT_RETURNTRANSFER, 1);
@@ -21,16 +23,16 @@ trait Queue
             throw new \RuntimeException('Error during json_decode');
         }
 
-        return new Jenkins\Queue($infos, $this);
+        return new \shiyunJK\Jenkins\Queue($infos, $this);
     }
 
     /**
-     * @param Jenkins\JobQueue $queue
+     * @param \shiyunJK\Jenkins\JobQueue $queue
      *
      * @throws \RuntimeException
      * @return void
      */
-    public function cancelQueue(Jenkins\JobQueue $queue)
+    public function cancelQueue(\shiyunJK\Jenkins\JobQueue $queue)
     {
         $url = sprintf('%s/queue/item/%s/cancelQueue', $this->baseUrl, $queue->getId());
 

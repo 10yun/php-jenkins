@@ -6,17 +6,11 @@ use shiyunJK\Jenkins;
 
 class JobQueue
 {
-
+    use TraitCom;
     /**
      * @var \stdClass
      */
     private $jobQueue;
-
-
-    /**
-     * @var Jenkins
-     */
-    protected $jenkins;
 
     /**
      * @param \stdClass $jobQueue
@@ -68,23 +62,5 @@ class JobQueue
     public function cancel()
     {
         $this->getJenkins()->cancelQueue($this);
-    }
-
-    /**
-     * @return Jenkins
-     */
-    public function getJenkins()
-    {
-        return $this->jenkins;
-    }
-
-    /**
-     * @param Jenkins $jenkins
-     */
-    public function setJenkins(Jenkins $jenkins)
-    {
-        $this->jenkins = $jenkins;
-
-        return $this;
     }
 }

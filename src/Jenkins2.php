@@ -165,9 +165,7 @@ class Jenkins
         if (null !== $this->jenkins) {
             return;
         }
-
         $curl = curl_init($this->baseUrl . '/api/json');
-
         curl_setopt($curl, \CURLOPT_RETURNTRANSFER, 1);
         $ret = curl_exec($curl);
 
@@ -205,64 +203,8 @@ class Jenkins
             return null;
         }
 
-        return new Jenkins\Computer($infos, $this);
+        return new \shiyunJK\Jenkins\Computer($infos, $this);
     }
-
-    /**
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->baseUrl;
-    }
-
-    /**
-     * @param string $job
-     *
-     * @return string
-     */
-    public function getUrlJob($job)
-    {
-        return sprintf('%s/job/%s', $this->baseUrl, $job);
-    }
-
-    /**
-     * getUrlView
-     *
-     * @param string $view
-     *
-     * @return string
-     */
-    public function getUrlView($view)
-    {
-        return sprintf('%s/view/%s', $this->baseUrl, $view);
-    }
-
-    /**
-     * @param string $jobname
-     *
-     * @return string
-     *
-     * @deprecated use getJobConfig instead
-     *
-     * @throws \RuntimeException
-     */
-    public function retrieveXmlConfigAsString($jobname)
-    {
-        return $this->getJobConfig($jobname);
-    }
-
-    /**
-     * @param string       $jobname
-     * @param \DomDocument $document
-     *
-     * @deprecated use setJobConfig instead
-     */
-    public function setConfigFromDomDocument($jobname, \DomDocument $document)
-    {
-        $this->setJobConfig($jobname, $document->saveXML());
-    }
-
 
     /**
      * @param Jenkins\Executor $executor
@@ -393,7 +335,7 @@ class Jenkins
             throw new \RuntimeException($errorMessage);
         }
 
-        return new Jenkins\TestReport($this, $infos, $jobName, $buildId);
+        return new \shiyunJK\Jenkins\TestReport($this, $infos, $jobName, $buildId);
     }
 
     /**

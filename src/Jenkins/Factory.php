@@ -6,7 +6,6 @@ use shiyunJK\Jenkins;
 
 class Factory
 {
-
     /**
      * @param string $url
      *

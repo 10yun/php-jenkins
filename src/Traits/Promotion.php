@@ -61,7 +61,7 @@ trait Promotion
         $paths['name'] = $name;
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::DELETE_PROMOTION, $paths),
+            'POST', $this->buildUrl(URL::PROMOTION_DELETE, $paths),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response);
@@ -82,7 +82,7 @@ trait Promotion
         $paths['name'] = $name;
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CREATE_PROMOTION, $paths), [
+            'POST', $this->buildUrl(URL::PROMOTION_CREATE, $paths), [
                 'body' => $configXml,
                 'headers' => ['Content-Type' => URL::DEFAULT_CONTENT_TYPE],
             ]
@@ -110,7 +110,7 @@ trait Promotion
         $paths['name'] = $name;
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CONFIG_PROMOTION, $paths), [
+            'POST', $this->buildUrl(URL::PROMOTION_CONFIG, $paths), [
                 'body' => $configXml,
                 'headers' => ['Content-Type' => URL::DEFAULT_CONTENT_TYPE],
             ]
@@ -132,7 +132,7 @@ trait Promotion
         $paths['name'] = $name;
 
         $response = $this->jenkinsRequest([
-            'GET', $this->buildUrl(URL::CONFIG_PROMOTION, $paths),
+            'GET', $this->buildUrl(URL::PROMOTION_CONFIG, $paths),
         ]);
 
         if ($response->getStatusCode() != 200) {

@@ -58,6 +58,6 @@ trait View
             throw new \RuntimeException('Error during json_decode');
         }
 
-        return new Jenkins\View($infos, $this);
+        return new \shiyunJK\Jenkins\View($infos, $this);
     }
 }

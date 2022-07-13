@@ -22,7 +22,7 @@ trait Queue
     public function getQueueItem($number, $depth = 0)
     {
         $response = $this->jenkinsRequest([
-            'GET', $this->buildUrl(URL::Q_ITEM, compact('number', 'depth'))
+            'GET', $this->buildUrl(URL::API_QUEUE_ITEM, compact('number', 'depth'))
         ]);
 
         return $this->getResponseFalseOrContents($response);
@@ -36,7 +36,7 @@ trait Queue
     public function getQueueInfo()
     {
         $response = $this->jenkinsRequest([
-            'GET', $this->buildUrl(URL::Q_INFO)
+            'GET', $this->buildUrl(URL::API_QUEUE_INFO)
         ]);
 
         return $this->getResponseFalseOrContents($response);
@@ -52,7 +52,7 @@ trait Queue
     public function cancelQueue($id)
     {
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CANCEL_QUEUE, compact('id')),
+            'POST', $this->buildUrl(URL::API_QUEUE_CANCEL, compact('id')),
             ['headers' => ['Referer' => $this->baseUrl,]],
         ]);
 

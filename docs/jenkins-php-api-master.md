@@ -52,20 +52,6 @@ Here are some examples of how to use it:
 ```
 
 
-## 获取视图的作业
------------------------------
-
-```php
-    $view = $jenkins->getView('madb_deploy');
-    foreach ($view->getJobs() as $job) {
-      var_dump($job->getName());
-    }
-    //string(13) "altlinux-pull"
-    //string(8) "dev-pull"
-    //string(9) "dev2-pull"
-    //string(11) "fedora-pull"
-```
-
 ## 获取构建及其状态
 ----------------------------
 
@@ -80,20 +66,3 @@ Here are some examples of how to use it:
     //int(121)
     //string(7) "FAILURE"
 ```
-
-## 检查jenkins是否空闲
-
------------------------------
-
-```php
-    var_dump($jenkins->isAvailable());
-    //bool(true);
-```
-
-For more information, see the [Jenkins API](https://wiki.jenkins-ci.org/display/JENKINS/Remote+access+API).
-
-
-## 编码标准
-----------------
-
-This projects follows PSR-0, PSR-1, PSR-2, PSR-4

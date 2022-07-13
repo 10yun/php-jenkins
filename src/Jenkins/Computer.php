@@ -6,16 +6,12 @@ use shiyunJK\Jenkins;
 
 class Computer
 {
+    use TraitCom;
 
     /**
      * @var \stdClass
      */
     private $computer;
-
-    /**
-     * @var Jenkins
-     */
-    private $jenkins;
 
 
     /**
@@ -79,27 +75,6 @@ class Computer
 
         return $this;
     }
-
-    /**
-     * @return Jenkins
-     */
-    public function getJenkins()
-    {
-        return $this->jenkins;
-    }
-
-    /**
-     * @param Jenkins $jenkins
-     *
-     * @return Computer
-     */
-    public function setJenkins(Jenkins $jenkins)
-    {
-        $this->jenkins = $jenkins;
-
-        return $this;
-    }
-
     /**
      * @return string
      */

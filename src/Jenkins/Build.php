@@ -6,6 +6,7 @@ use shiyunJK\Jenkins;
 
 class Build
 {
+    use TraitCom;
 
     /**
      * @var string
@@ -31,23 +32,15 @@ class Build
      * @var string
      */
     const UNSTABLE = 'UNSTABLE';
-
     /**
      * @var string
      */
-    const ABORTED = 'ABORTED';
+    const  ABORTED = 'ABORTED';
 
     /**
      * @var \stdClass
      */
     private $build;
-
-    /**
-     * @var Jenkins
-     */
-    private $jenkins;
-
-
     /**
      * @param \stdClass $build
      * @param Jenkins   $jenkins
@@ -57,7 +50,6 @@ class Build
         $this->build = $build;
         $this->setJenkins($jenkins);
     }
-
     /**
      * @return array
      */
@@ -196,6 +188,37 @@ class Build
         return $this->build->url;
     }
 
+
+    /**
+     * @param string $computer
+     *
+     * @return array
+     * @throws \RuntimeException
+     */
+    public function getExecutors($computer = '(master)')
+    {
+        // $this->initialize();
+        $executors = array();
+        for ($i = 0; $i < $this->jenkins->numExecutors; $i++) {
+            $url  = sprintf('%s/computer/%s/executors/%s/api/json', $this->baseUrl, $computer, $i);
+            $curl = curl_init($url);
+
+            curl_setopt($curl, \CURLOPT_RETURNTRANSFER, 1);
+            $ret = curl_exec($curl);
+
+            $this->validateCurl(
+                $curl,
+                sprintf('Error during getting information for executors[%s@%s] on %s', $i, $computer, $this->baseUrl)
+            );
+
+            $infos = json_decode($ret);
+            if (!$infos instanceof \stdClass) {
+                throw new \RuntimeException('Error during json_decode');
+            }
+            $executors[] = new Jenkins\Executor($infos, $computer, $this);
+        }
+        return $executors;
+    }
     /**
      * @return Executor|null
      */
@@ -224,27 +247,6 @@ class Build
     {
         return Build::RUNNING === $this->getResult();
     }
-
-    /**
-     * @return Jenkins
-     */
-    public function getJenkins()
-    {
-        return $this->jenkins;
-    }
-
-    /**
-     * @param Jenkins $jenkins
-     *
-     * @return Job
-     */
-    public function setJenkins(Jenkins $jenkins)
-    {
-        $this->jenkins = $jenkins;
-
-        return $this;
-    }
-
     public function getBuiltOn()
     {
         return $this->build->builtOn;

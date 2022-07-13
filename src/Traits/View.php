@@ -27,7 +27,7 @@ trait View
         $paths = $this->getJobFolder($name);
 
         $response = $this->jenkinsRequest([
-            'GET', $this->buildUrl(URL::VIEW_JOBS, $paths),
+            'GET', $this->buildUrl(URL::API_VIEW_SUBJOBS, $paths),
         ]);
 
         $data = $this->getResponseFalseOrContents($response);
@@ -61,7 +61,7 @@ trait View
         $paths = $this->getJobFolder($name);
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::DELETE_VIEW, $paths),
+            'POST', $this->buildUrl(URL::API_VIEW_DELETE, $paths),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response);
@@ -80,7 +80,7 @@ trait View
         $paths = $this->getJobFolder($name);
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CREATE_VIEW, $paths), [
+            'POST', $this->buildUrl(URL::API_VIEW_CREATE, $paths), [
                 'body' => $configXml,
                 'headers' => ['Content-Type' => URL::DEFAULT_CONTENT_TYPE],
             ]
@@ -106,7 +106,7 @@ trait View
         $paths = $this->getJobFolder($name);
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::CONFIG_VIEW, $paths), [
+            'POST', $this->buildUrl(URL::API_VIEW_CONFIG, $paths), [
                 'body' => $configXml,
                 'headers' => ['Content-Type' => URL::DEFAULT_CONTENT_TYPE],
             ]
@@ -126,7 +126,7 @@ trait View
         $paths = $this->getJobFolder($name);
 
         $response = $this->jenkinsRequest([
-            'GET', $this->buildUrl(URL::CONFIG_VIEW, $paths),
+            'GET', $this->buildUrl(URL::API_VIEW_CONFIG, $paths),
         ]);
 
         if ($response->getStatusCode() != 200) {

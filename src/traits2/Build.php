@@ -34,7 +34,7 @@ trait Build
             return null;
         }
 
-        return new Jenkins\Build($infos, $this);
+        return new \shiyunJK\Jenkins\Build($infos, $this);
     }
 
     /**
@@ -46,7 +46,7 @@ trait Build
     public function getUrlBuild($job, $buildId)
     {
         return (null === $buildId) ?
-            $this->getUrlJob($job)
+            sprintf('%s/job/%s', $this->baseUrl, $job)
             : sprintf('%s/job/%s/%d', $this->baseUrl, $job, $buildId);
     }
 }

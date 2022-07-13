@@ -36,40 +36,6 @@ trait Job
     }
 
     /**
-     * @param string $computer
-     *
-     * @return array
-     * @throws \RuntimeException
-     */
-    public function getExecutors($computer = '(master)')
-    {
-        $this->initialize();
-
-        $executors = array();
-        for ($i = 0; $i < $this->jenkins->numExecutors; $i++) {
-            $url  = sprintf('%s/computer/%s/executors/%s/api/json', $this->baseUrl, $computer, $i);
-            $curl = curl_init($url);
-
-            curl_setopt($curl, \CURLOPT_RETURNTRANSFER, 1);
-            $ret = curl_exec($curl);
-
-            $this->validateCurl(
-                $curl,
-                sprintf('Error during getting information for executors[%s@%s] on %s', $i, $computer, $this->baseUrl)
-            );
-
-            $infos = json_decode($ret);
-            if (!$infos instanceof \stdClass) {
-                throw new \RuntimeException('Error during json_decode');
-            }
-
-            $executors[] = new Jenkins\Executor($infos, $computer, $this);
-        }
-
-        return $executors;
-    }
-
-    /**
      * @param       $jobName
      * @param array $parameters
      *
@@ -135,7 +101,7 @@ trait Job
             throw new \RuntimeException('Error during json_decode');
         }
 
-        return new Jenkins\Job($infos, $this);
+        return new \shiyunJK\Jenkins\Job($infos, $this);
     }
 
     /**
@@ -226,6 +192,18 @@ trait Job
      * @param string $jobname
      *
      * @return string
+     *
+     * @throws \RuntimeException
+     */
+    public function retrieveXmlConfigAsString($jobname)
+    {
+        return $this->getJobConfig($jobname);
+    }
+
+    /**
+     * @param string $jobname
+     *
+     * @return string
      */
     public function getJobConfig($jobname)
     {
@@ -237,5 +215,15 @@ trait Job
         $this->validateCurl($curl, sprintf('Error during getting configuration for job %s', $jobname));
 
         return $ret;
+    }
+
+
+    /**
+     * @param string       $jobname
+     * @param \DomDocument $document
+     */
+    public function setConfigFromDomDocument($jobname, \DomDocument $document)
+    {
+        $this->setJobConfig($jobname, $document->saveXML());
     }
 }

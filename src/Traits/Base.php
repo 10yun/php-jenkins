@@ -24,7 +24,9 @@ trait Base
     public function getInfo($item = '', $query = '', $folderUrl = '')
     {
         $response = $this->jenkinsOpen([
-            'GET', $this->buildUrl(URL::INFO, ['folder_url' => $folderUrl]) . $query
+            'GET', $this->buildUrl(URL::INFO, [
+                'folder_url' => $folderUrl
+            ]) . $query
         ]);
 
         if ($item) {
@@ -255,7 +257,7 @@ trait Base
     public function restart()
     {
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::RESTART),
+            'POST', $this->buildUrl(URL::API_ZL_RESTART),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response, 503);

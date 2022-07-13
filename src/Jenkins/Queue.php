@@ -6,16 +6,12 @@ use shiyunJK\Jenkins;
 
 class Queue
 {
+    use TraitCom;
 
     /**
      * @var \stdClass
      */
     private $queue;
-
-    /**
-     * @var Jenkins
-     */
-    protected $jenkins;
 
     /**
      * @param \stdClass $queue
@@ -39,25 +35,5 @@ class Queue
         }
 
         return $jobs;
-    }
-
-    /**
-     * @return Jenkins
-     */
-    public function getJenkins()
-    {
-        return $this->jenkins;
-    }
-
-    /**
-     * @param Jenkins $jenkins
-     *
-     * @return Queue
-     */
-    public function setJenkins(Jenkins $jenkins)
-    {
-        $this->jenkins = $jenkins;
-
-        return $this;
     }
 }

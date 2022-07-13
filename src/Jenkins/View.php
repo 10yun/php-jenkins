@@ -67,8 +67,6 @@ class View
     }
 
     /**
-     * getColor
-     *
      * @return string
      */
     public function getColor()
@@ -84,10 +82,7 @@ class View
     }
 
     /**
-     * getColorPriority
-     *
      * @param string $color
-     *
      * @return int
      */
     protected function getColorPriority($color)

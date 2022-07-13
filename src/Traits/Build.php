@@ -198,7 +198,7 @@ trait Build
         $paths['number'] = $number;
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::STOP_BUILD, $paths),
+            'POST', $this->buildUrl(URL::BUILD_STOP, $paths),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response, 200);
@@ -217,7 +217,7 @@ trait Build
         $paths['number'] = $number;
 
         $response = $this->jenkinsRequest([
-            'POST', $this->buildUrl(URL::DELETE_BUILD, $paths),
+            'POST', $this->buildUrl(URL::BUILD_DELETE, $paths),
         ]);
 
         return $this->getResponseTrueOrStatusCode($response, 200);

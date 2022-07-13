@@ -1,12 +1,20 @@
 {
-    "name": "yuan1994/jenkins-php",
+    "name": "shiyun/php-jenkins",
     "description": "Jenkins PHP api",
+    "version": "1.0.0",
     "type": "library",
     "authors": [
         {
-            "name": "shiyun",
-            "email": "343196936@qq.com",
-            "homepage": "https://github.com/10yun/php-jenkins"
+            "name": "10yun",
+            "email": "240337740@qq.com",
+            "homepage": "https://www.10yun.com/"
+        },
+        {
+            "name": "trystan"
+        },
+        {
+            "name": "ctocode",
+            "email": "343196936@qq.com"
         }
     ],
     "keywords": [
@@ -16,13 +24,11 @@
         "rest",
         "jenkins-php"
     ],
-    "homepage1": "http://yuan1994.github.io/jenkins-php",
-    "homepage2": "https://github.com/jenkins-khan/jenkins-php-api",
+    "homepage": "https://github.com/10yun/php-jenkins",
     "license": "MIT",
     "require": {
-        "php": ">=7.0",
-        "guzzlehttp/guzzle": "^6.3",
-        "monolog/monolog": "^1.23"
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^6.5.8"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +36,6 @@
         }
     },
     "require-dev": {
-        "atoum/atoum": "2.0.1",
         "mockery/mockery": "^1.1",
         "phpunit/phpunit": "^7.2"
     },

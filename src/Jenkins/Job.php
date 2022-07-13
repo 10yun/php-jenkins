@@ -6,17 +6,11 @@ use shiyunJK\Jenkins;
 
 class Job
 {
-
+    use TraitCom;
     /**
      * @var \stdClass
      */
     private $job;
-
-    /**
-     * @var Jenkins
-     */
-    protected $jenkins;
-
     /**
      * @param \stdClass $job
      * @param Jenkins   $jenkins
@@ -24,7 +18,6 @@ class Job
     public function __construct($job, Jenkins $jenkins)
     {
         $this->job = $job;
-
         $this->setJenkins($jenkins);
     }
 
@@ -124,27 +117,6 @@ class Job
 
         return $document;
     }
-
-    /**
-     * @return Jenkins
-     */
-    public function getJenkins()
-    {
-        return $this->jenkins;
-    }
-
-    /**
-     * @param Jenkins $jenkins
-     *
-     * @return Job
-     */
-    public function setJenkins(Jenkins $jenkins)
-    {
-        $this->jenkins = $jenkins;
-
-        return $this;
-    }
-
     /**
      * @return Build|null
      */
