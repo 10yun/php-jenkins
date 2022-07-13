@@ -56,11 +56,11 @@ class URL
     /**
      * 
      */
+    const NODE_TYPE         = 'hudson.slaves.DumbSlave$DescriptorImpl';
     const NODE_LIST         = 'computer/api/json?depth={depth}';
     const CREATE_NODE       = 'computer/doCreateItem';
     const DELETE_NODE       = 'computer/{name}/doDelete';
     const NODE_INFO         = 'computer/{name}/api/json?depth={depth}';
-    const NODE_TYPE         = 'hudson.slaves.DumbSlave$DescriptorImpl';
     const TOGGLE_OFFLINE    = 'computer/{name}/toggleOffline?offlineMessage={msg}';
     const CONFIG_NODE       = 'computer/{name}/config.xml';
     const NODE_SCRIPT_TEXT  = 'computer/{node}/scriptText';

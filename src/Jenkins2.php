@@ -238,53 +238,6 @@ class Jenkins
         );
     }
 
-    /**
-     * @param string $computerName
-     *
-     * @throws \RuntimeException
-     * @return void
-     */
-    public function toggleOfflineComputer($computerName)
-    {
-        $url  = sprintf('%s/computer/%s/toggleOffline', $this->baseUrl, $computerName);
-        $curl = curl_init($url);
-        curl_setopt($curl, \CURLOPT_POST, 1);
-
-        $headers = array();
-
-        if ($this->areCrumbsEnabled()) {
-            $headers[] = $this->getCrumbHeader();
-        }
-
-        curl_setopt($curl, \CURLOPT_HTTPHEADER, $headers);
-        curl_exec($curl);
-
-        $this->validateCurl($curl, sprintf('Error marking %s offline', $computerName));
-    }
-
-    /**
-     * @param string $computerName
-     *
-     * @throws \RuntimeException
-     * @return void
-     */
-    public function deleteComputer($computerName)
-    {
-        $url  = sprintf('%s/computer/%s/doDelete', $this->baseUrl, $computerName);
-        $curl = curl_init($url);
-        curl_setopt($curl, \CURLOPT_POST, 1);
-
-        $headers = array();
-
-        if ($this->areCrumbsEnabled()) {
-            $headers[] = $this->getCrumbHeader();
-        }
-
-        curl_setopt($curl, \CURLOPT_HTTPHEADER, $headers);
-        curl_exec($curl);
-
-        $this->validateCurl($curl, sprintf('Error deleting %s', $computerName));
-    }
 
     /**
      * @param string $jobname

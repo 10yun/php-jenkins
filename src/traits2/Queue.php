@@ -34,7 +34,7 @@ trait Queue
      */
     public function cancelQueue(\shiyunJK\Jenkins\JobQueue $queue)
     {
-        $url = sprintf('%s/queue/item/%s/cancelQueue', $this->baseUrl, $queue->getId());
+        $url = sprintf('queue/item/%s/cancelQueue',  $queue->getId());
 
         $curl = curl_init($url);
         curl_setopt($curl, \CURLOPT_POST, 1);
