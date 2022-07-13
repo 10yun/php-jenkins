@@ -42,6 +42,7 @@ trait Queue
         return $this->getResponseFalseOrContents($response);
     }
 
+
     /**
      * Cancel a queued build.
      *

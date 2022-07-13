@@ -24,7 +24,7 @@ Before anything, you need to instantiate the client :
 
 
 ```php
-    $jenkins = new \JenkinsKhan\Jenkins('http://host.org:8080');
+    $jenkins = new \shiyunJK\Jenkins('http://host.org:8080');
 ```
 
 If your Jenkins needs authentication, you need to pass a URL like this : `'http://user:token@host.org:8080'`.

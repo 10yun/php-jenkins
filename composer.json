@@ -34,9 +34,6 @@
         "mockery/mockery": "^1.1",
         "phpunit/phpunit": "^7.2"
     },
-    "config": {
-        "bin-dir": "bin"
-    },
     "autoload-dev": {
         "psr-4": {
             "shiyunJK\\Tests\\": "tests"

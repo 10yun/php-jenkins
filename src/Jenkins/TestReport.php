@@ -1,8 +1,8 @@
 <?php
 
-namespace JenkinsKhan\Jenkins;
+namespace shiyunJK\Jenkins;
 
-use JenkinsKhan\Jenkins;
+use shiyunJK\Jenkins;
 
 class TestReport
 {
@@ -134,4 +134,3 @@ class TestReport
         return $status;
     }
 }
-
