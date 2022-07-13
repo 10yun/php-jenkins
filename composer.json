@@ -1,8 +1,9 @@
 {
     "name": "shiyun/php-jenkins",
     "description": "Jenkins PHP api",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "library",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "10yun",
