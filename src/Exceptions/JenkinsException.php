@@ -1,6 +1,6 @@
 <?php
 
-namespace Yuan1994\Jenkins\Exceptions;
+namespace shiyunJK\Exceptions;
 
 class JenkinsException extends \Exception
 {

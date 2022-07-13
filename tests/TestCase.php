@@ -1,23 +1,23 @@
 <?php
 
-namespace Yuan1994\Jenkins\Tests;
+namespace shiyunJK\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
-use Yuan1994\Jenkins\Jenkins;
-use Yuan1994\Jenkins\Supports\Http;
+use shiyunJK\Jenkins;
+use shiyunJK\Supports\Http;
 use GuzzleHttp\Psr7\Response;
 
 /**
  * Class TestCase
  *
- * @package Yuan1994\Jenkins\Tests
+ * @package shiyunJK\Tests
  */
 class TestCase extends BaseTestCase
 {
     /**
      * @var string
      */
-    protected $url = 'http://localhost:8080';
+    protected $baseUrl = 'http://localhost:8080';
 
     /**
      * @var string
@@ -31,7 +31,7 @@ class TestCase extends BaseTestCase
 
     /**
      * @param null|array|string $mockData
-     * @return \Yuan1994\Jenkins\Jenkins
+     * @return \shiyunJK\Jenkins
      */
     public function getJenkins($mockData = null)
     {
@@ -71,7 +71,7 @@ class TestCase extends BaseTestCase
             'password' => $this->password,
             'maybe_add_crumb' => false,
         ];
-        $jenkins = new Jenkins($this->url, $config, $mockHttp);
+        $jenkins = new Jenkins($this->baseUrl, $config, $mockHttp);
 
         return $jenkins;
     }

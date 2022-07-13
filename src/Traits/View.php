@@ -1,14 +1,14 @@
 <?php
 
-namespace Yuan1994\Jenkins\Traits;
+namespace shiyunJK\Traits;
 
-use Yuan1994\Jenkins\Consts\URL;
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
+use shiyunJK\Consts\URL;
+use shiyunJK\Exceptions\JenkinsException;
 
 /**
  * Trait View
  *
- * @package Yuan1994\Jenkins\Traits
+ * @package shiyunJK\Traits
  */
 trait View
 {
@@ -73,7 +73,7 @@ trait View
      * @param string $name Name of Jenkins view
      * @param string $configXml config file text
      * @return bool|int
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function createView($name, $configXml)
     {

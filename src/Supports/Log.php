@@ -1,6 +1,6 @@
 <?php
 
-namespace Yuan1994\Jenkins\Supports;
+namespace shiyunJK\Supports;
 
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -8,7 +8,7 @@ use Monolog\Logger;
 /**
  * Class Log
  *
- * @package Yuan1994\Jenkins\Supports
+ * @package shiyunJK\Supports
  */
 class Log
 {

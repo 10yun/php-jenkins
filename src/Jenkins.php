@@ -1,17 +1,17 @@
 <?php
 
-namespace Yuan1994\Jenkins;
+namespace shiyunJK;
 
 use Psr\Http\Message\ResponseInterface;
-use Yuan1994\Jenkins\Consts\URL;
-use Yuan1994\Jenkins\Supports\Http;
-use Yuan1994\Jenkins\Traits\Base;
-use Yuan1994\Jenkins\Traits\Build;
-use Yuan1994\Jenkins\Traits\Job;
-use Yuan1994\Jenkins\Traits\Node;
-use Yuan1994\Jenkins\Traits\Promotion;
-use Yuan1994\Jenkins\Traits\Queue;
-use Yuan1994\Jenkins\Traits\View;
+use shiyunJK\Consts\URL;
+use shiyunJK\Supports\Http;
+use shiyunJK\Traits\Base;
+use shiyunJK\Traits\Build;
+use shiyunJK\Traits\Job;
+use shiyunJK\Traits\Node;
+use shiyunJK\Traits\Promotion;
+use shiyunJK\Traits\Queue;
+use shiyunJK\Traits\View;
 use GuzzleHttp\Exception\TransferException;
 
 class Jenkins
@@ -28,7 +28,7 @@ class Jenkins
      *
      * @var string
      */
-    protected $url;
+    protected $baseUrl;
 
     /**
      * Config
@@ -40,7 +40,7 @@ class Jenkins
     /**
      * Http Client
      *
-     * @var \Yuan1994\Jenkins\Supports\Http
+     * @var \shiyunJK\Supports\Http
      */
     protected $http;
 
@@ -65,12 +65,12 @@ class Jenkins
      */
     public function __construct($url, array $config = [], Http $http = null)
     {
-        $this->url = rtrim($url, '/') . '/';
+        $this->baseUrl = rtrim($url, '/') . '/';
 
         $this->authorization = 'Basic ' .
             base64_encode("{$config['username']}:{$config['password']}");
 
-        $config['guzzle']['base_uri'] = $this->url;
+        $config['guzzle']['base_uri'] = $this->baseUrl;
 
         if (empty($http)) {
             $this->http = new Http(empty($config['guzzle']) ? [] : $config['guzzle']);

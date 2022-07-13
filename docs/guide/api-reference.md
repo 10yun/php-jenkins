@@ -74,7 +74,7 @@
 
 ### 异常信息
 
-`Yuan1994\Jenkins\Exceptions\JenkinsException`
+`shiyunJK\Exceptions\JenkinsException`
 
 Item[{$item}] does not exists.
 

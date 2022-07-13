@@ -1,6 +1,6 @@
 <?php
 
-namespace Yuan1994\Jenkins\Supports;
+namespace shiyunJK\Supports;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;

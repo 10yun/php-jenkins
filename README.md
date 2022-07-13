@@ -5,18 +5,23 @@ Jenkins-PHP 是Jenkins REST API 的工具库，旨在提供一种更方便的方
 
 Jenkins-PHP主要实现了以下功能：
 
-- Create new jobs
-- Copy existing jobs
-- Delete jobs
-- Update jobs
-- Enable/Disable jobs
-- Get a job`s build information
+**任务job**
+
+- 创建任务 Create new jobs
+- 复制已有任务 Copy existing jobs
+- 删除任务 Delete jobs
+- 更新任务 Update jobs
+- 启用/禁用任务 Enable/Disable jobs
+- 获取任务信息 Get a job`s build information
 - Get Jenkins master version information
 - Get Jenkins plugin information
-- Start a build on a job
-- Create nodes
-- Enable/Disable nodes
-- Get information on nodes
+- 在一项工作上开始构建 Start a build on a job
+- 创建节点 Create nodes
+- 启用/禁用节点 Enable/Disable nodes
+- 获取节点信息 Get information on nodes
+
+**视图views**
+
 - Create/Delete/Reconfig views
 - Put server in shutdown mode (quiet down/safe exit/exit)
 - Cancel server shutdown mode (cancel quiet down)
@@ -31,7 +36,7 @@ Jenkins-PHP主要实现了以下功能：
 
 ## 快速安装
 ```
-composer require yuan1994/jenkins-php
+composer require shiyun/php-jenkins
 ```
 
 ## 在线文档

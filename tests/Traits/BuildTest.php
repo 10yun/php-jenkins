@@ -1,9 +1,9 @@
 <?php
 
-namespace Yuan1994\Jenkins\Tests\Traits;
+namespace shiyunJK\Tests\Traits;
 
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
-use Yuan1994\Jenkins\Tests\TestCase;
+use shiyunJK\Exceptions\JenkinsException;
+use shiyunJK\Tests\TestCase;
 
 class BuildTest extends TestCase
 {

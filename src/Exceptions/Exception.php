@@ -1,11 +1,11 @@
 <?php
 
-namespace Yuan1994\Jenkins\Exceptions;
+namespace shiyunJK\Exceptions;
 
 /**
  * Class Exception
  *
- * @package Yuan1994\Jenkins\Exceptions
+ * @package shiyunJK\Exceptions
  */
 class Exception extends \Exception
 {

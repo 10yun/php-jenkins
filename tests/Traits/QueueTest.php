@@ -1,8 +1,8 @@
 <?php
 
-namespace Yuan1994\Jenkins\Tests\Traits;
+namespace shiyunJK\Tests\Traits;
 
-use Yuan1994\Jenkins\Tests\TestCase;
+use shiyunJK\Tests\TestCase;
 
 class QueueTest extends TestCase
 {

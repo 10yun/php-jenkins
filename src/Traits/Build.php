@@ -1,14 +1,14 @@
 <?php
 
-namespace Yuan1994\Jenkins\Traits;
+namespace shiyunJK\Traits;
 
-use Yuan1994\Jenkins\Consts\URL;
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
+use shiyunJK\Consts\URL;
+use shiyunJK\Exceptions\JenkinsException;
 
 /**
  * Trait Build
  *
- * @package Yuan1994\Jenkins\Traits
+ * @package shiyunJK\Traits
  */
 trait Build
 {
@@ -161,7 +161,7 @@ trait Build
      * @param array  $parameters parameters for job
      * @param string $token Jenkins API token
      * @return int queue item
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function buildJob($name, $parameters = [], $token = null)
     {
@@ -271,7 +271,7 @@ trait Build
      * @param string $name Job name
      * @param int    $number Build number
      * @return array Build console output
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function getBuildConsoleOutput($name, $number)
     {

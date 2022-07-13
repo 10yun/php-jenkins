@@ -1,9 +1,9 @@
 <?php
 
-namespace Yuan1994\Jenkins\Tests\Traits;
+namespace shiyunJK\Tests\Traits;
 
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
-use Yuan1994\Jenkins\Tests\TestCase;
+use shiyunJK\Exceptions\JenkinsException;
+use shiyunJK\Tests\TestCase;
 
 class PromotionTest extends TestCase
 {
@@ -56,7 +56,7 @@ class PromotionTest extends TestCase
 
     public function testCreatePromotion()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/Promotion/getPromotionConfig.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/Promotion/getPromotionConfig.xml');
         $data = [
             ['status' => 200, 'body' => 'success'],
             ['status' => 400, 'body' => 'promotion already exist'],
@@ -72,7 +72,7 @@ class PromotionTest extends TestCase
 
     public function testReconfigPromotion()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/Promotion/getPromotionConfig.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/Promotion/getPromotionConfig.xml');
         $data = [
             ['status' => 200, 'body' => 'success'],
             ['status' => 404, 'body' => '404 not found'],
@@ -88,7 +88,7 @@ class PromotionTest extends TestCase
 
     public function testGetPromotionConfig()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/Promotion/getPromotionConfig.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/Promotion/getPromotionConfig.xml');
         $data = [
             ['status' => 200, 'body' => $configXml],
             ['status' => 404, 'body' => '404 not found'],

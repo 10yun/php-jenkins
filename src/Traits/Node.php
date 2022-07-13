@@ -1,14 +1,14 @@
 <?php
 
-namespace Yuan1994\Jenkins\Traits;
+namespace shiyunJK\Traits;
 
-use Yuan1994\Jenkins\Consts\URL;
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
+use shiyunJK\Consts\URL;
+use shiyunJK\Exceptions\JenkinsException;
 
 /**
  * Trait Node
  *
- * @package Yuan1994\Jenkins\Traits
+ * @package shiyunJK\Traits
  */
 trait Node
 {
@@ -83,7 +83,7 @@ trait Node
      * @param string $name Name of Jenkins node
      * @param string $msg Offline message
      * @return bool|int
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function disableNode($name, $msg = '')
     {
@@ -106,7 +106,7 @@ trait Node
      *
      * @param string $name Name of Jenkins node
      * @return bool|int
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function enableNode($name)
     {
@@ -139,7 +139,7 @@ trait Node
      *                         URL::LAUNCHER_JNLP, URL::LAUNCHER_WINDOWS_SERVICE
      * @param array  $launcherParams Additional parameters for the launcher
      * @return bool
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function createNode(
         $name,

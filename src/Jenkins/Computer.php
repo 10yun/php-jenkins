@@ -75,7 +75,7 @@ class Computer
     public function delete()
     {
         $this->getJenkins()
-             ->deleteComputer($this->getName());
+            ->deleteComputer($this->getName());
 
         return $this;
     }

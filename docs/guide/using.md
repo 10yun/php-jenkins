@@ -78,7 +78,7 @@ var_dump($isCancel); // true
 
 ## 示例5：Create/Copy/Update/Delete Jobs
 ```php
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
+use shiyunJK\Exceptions\JenkinsException;
 
 $configXml = file_get_contents(__DIR__.'/../data/Job/config.xml');
 

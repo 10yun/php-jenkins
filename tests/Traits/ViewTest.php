@@ -1,9 +1,9 @@
 <?php
 
-namespace Yuan1994\Jenkins\Tests\Traits;
+namespace shiyunJK\Tests\Traits;
 
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
-use Yuan1994\Jenkins\Tests\TestCase;
+use shiyunJK\Exceptions\JenkinsException;
+use shiyunJK\Tests\TestCase;
 
 class ViewTest extends TestCase
 {
@@ -50,7 +50,7 @@ class ViewTest extends TestCase
 
     public function testCreateView()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/View/getViewConfig.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/View/getViewConfig.xml');
         $data = [
             ['status' => 200, 'body' => 'success'],
             ['status' => 400, 'body' => 'view already exist'],
@@ -66,7 +66,7 @@ class ViewTest extends TestCase
 
     public function testReconfigView()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/View/getViewConfig.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/View/getViewConfig.xml');
         $data = [
             ['status' => 200, 'body' => 'success'],
             ['status' => 404, 'body' => '404 not found'],
@@ -82,7 +82,7 @@ class ViewTest extends TestCase
 
     public function testGetViewConfig()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/View/getViewConfig.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/View/getViewConfig.xml');
         $data = [
             ['status' => 200, 'body' => $configXml],
             ['status' => 404, 'body' => '404 not found'],

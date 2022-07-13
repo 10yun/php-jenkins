@@ -1,10 +1,10 @@
 <?php
 
-namespace Yuan1994\Jenkins\Tests\Traits;
+namespace shiyunJK\Tests\Traits;
 
-use Yuan1994\Jenkins\Consts\URL;
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
-use Yuan1994\Jenkins\Tests\TestCase;
+use shiyunJK\Consts\URL;
+use shiyunJK\Exceptions\JenkinsException;
+use shiyunJK\Tests\TestCase;
 
 class NodeTest extends TestCase
 {
@@ -145,12 +145,24 @@ class NodeTest extends TestCase
         $jenkins = $this->getJenkins($data);
 
         $responseSuccess = $jenkins->createNode(
-            'not-exist-slave', 2, 'slave node', '/var/lib/jenkins', null, false,
-            URL::LAUNCHER_COMMAND, ['command' => 'launcher command']
+            'not-exist-slave',
+            2,
+            'slave node',
+            '/var/lib/jenkins',
+            null,
+            false,
+            URL::LAUNCHER_COMMAND,
+            ['command' => 'launcher command']
         );
         $responseError = $jenkins->createNode(
-            'not-exist-slave', 2, 'slave node', '/var/lib/jenkins', null, false,
-            URL::LAUNCHER_COMMAND, ['command' => 'launcher command']
+            'not-exist-slave',
+            2,
+            'slave node',
+            '/var/lib/jenkins',
+            null,
+            false,
+            URL::LAUNCHER_COMMAND,
+            ['command' => 'launcher command']
         );;
 
         $this->assertEquals(true, $responseSuccess);
@@ -159,14 +171,20 @@ class NodeTest extends TestCase
         $this->expectException(JenkinsException::class);
 
         $expectJenkinsException = $jenkins->createNode(
-            'exist-slave', 2, 'slave node', '/var/lib/jenkins', null, false,
-            URL::LAUNCHER_COMMAND, ['command' => 'launcher command']
+            'exist-slave',
+            2,
+            'slave node',
+            '/var/lib/jenkins',
+            null,
+            false,
+            URL::LAUNCHER_COMMAND,
+            ['command' => 'launcher command']
         );;
     }
 
     public function testGetNodeConfig()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/Node/config.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/Node/config.xml');
         $data = [
             ['status' => 200, 'body' => $configXml],
             ['status' => 404, 'body' => 'not found'],
@@ -182,7 +200,7 @@ class NodeTest extends TestCase
 
     public function testReconfigNode()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/Node/config.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/Node/config.xml');
         $data = [
             ['status' => 200, 'body' => 'success'],
             ['status' => 404, 'body' => 'not found'],
@@ -195,5 +213,4 @@ class NodeTest extends TestCase
         $this->assertEquals(true, $responseSuccess);
         $this->assertEquals(404, $responseError);
     }
-
 }

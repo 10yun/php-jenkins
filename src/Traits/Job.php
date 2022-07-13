@@ -1,14 +1,14 @@
 <?php
 
-namespace Yuan1994\Jenkins\Traits;
+namespace shiyunJK\Traits;
 
-use Yuan1994\Jenkins\Consts\URL;
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
+use shiyunJK\Consts\URL;
+use shiyunJK\Exceptions\JenkinsException;
 
 /**
  * Trait Job
  *
- * @package Yuan1994\Jenkins\Traits
+ * @package shiyunJK\Traits
  */
 trait Job
 {
@@ -24,7 +24,7 @@ trait Job
      *                             an additional API call which may
      *                             return significant amounts of data.
      * @return array job information
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function getJobInfo($name, $depth = 0, $fetchAllBuilds = false)
     {
@@ -48,7 +48,7 @@ trait Job
      *
      * @param array $data
      * @return array
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     protected function addMissingBuilds($data)
     {
@@ -201,7 +201,7 @@ trait Job
      * @param string $fromName Name of Jenkins job to rename
      * @param string $toName New Jenkins job name
      * @return bool
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function renameJob($fromName, $toName)
     {
@@ -280,7 +280,7 @@ trait Job
      * @param string $name Name of Jenkins job
      * @param string $configXml config file text
      * @return bool
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function createJob($name, $configXml)
     {
@@ -304,7 +304,7 @@ trait Job
      *
      * @param string $name
      * @return bool
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function createFolder($name)
     {

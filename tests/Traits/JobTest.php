@@ -1,9 +1,9 @@
 <?php
 
-namespace Yuan1994\Jenkins\Tests\Traits;
+namespace shiyunJK\Tests\Traits;
 
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
-use Yuan1994\Jenkins\Tests\TestCase;
+use shiyunJK\Exceptions\JenkinsException;
+use shiyunJK\Tests\TestCase;
 
 class JobTest extends TestCase
 {
@@ -184,7 +184,7 @@ class JobTest extends TestCase
         ];
         $jenkins = $this->getJenkins($data);
 
-        $configXml = file_get_contents(__DIR__.'/../data/Job/config.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/Job/config.xml');
 
         $responseSuccess = $jenkins->createJob('job-name', $configXml);
         $responseError = $jenkins->createJob('job-name', $configXml);
@@ -198,7 +198,7 @@ class JobTest extends TestCase
 
     public function testGetJobConfig()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/Job/config.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/Job/config.xml');
         $data = [
             ['status' => 200, 'body' => $configXml],
             ['status' => 404, 'body' => 'not xml format, like 404 not found.']
@@ -214,7 +214,7 @@ class JobTest extends TestCase
 
     public function testReconfigJob()
     {
-        $configXml = file_get_contents(__DIR__.'/../data/Job/config.xml');
+        $configXml = file_get_contents(__DIR__ . '/../data/Job/config.xml');
         $data = [
             ['status' => 200],
             ['status' => 404],

@@ -1,14 +1,14 @@
 <?php
 
-namespace Yuan1994\Jenkins\Traits;
+namespace shiyunJK\Traits;
 
-use Yuan1994\Jenkins\Consts\URL;
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
+use shiyunJK\Consts\URL;
+use shiyunJK\Exceptions\JenkinsException;
 
 /**
  * Trait Base
  *
- * @package Yuan1994\Jenkins\Traits
+ * @package shiyunJK\Traits
  */
 trait Base
 {
@@ -19,7 +19,7 @@ trait Base
      *
      * @param string $item item to get information about on this Master
      * @return array|mixed information about Master or item
-     * @throws \Yuan1994\Jenkins\Exceptions\JenkinsException
+     * @throws \shiyunJK\Exceptions\JenkinsException
      */
     public function getInfo($item = '', $query = '', $folderUrl = '')
     {

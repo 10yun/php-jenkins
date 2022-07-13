@@ -1,6 +1,6 @@
 <?php
 
-namespace Yuan1994\Jenkins\Consts;
+namespace shiyunJK\Consts;
 
 class URL
 {

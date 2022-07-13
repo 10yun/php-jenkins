@@ -1,14 +1,14 @@
 <?php
 
-namespace Yuan1994\Jenkins\Traits;
+namespace shiyunJK\Traits;
 
-use Yuan1994\Jenkins\Consts\URL;
-use Yuan1994\Jenkins\Exceptions\JenkinsException;
+use shiyunJK\Consts\URL;
+use shiyunJK\Exceptions\JenkinsException;
 
 /**
  * Trait Queue
  *
- * @package Yuan1994\Jenkins\Traits
+ * @package shiyunJK\Traits
  */
 trait Queue
 {
@@ -52,7 +52,7 @@ trait Queue
     {
         $response = $this->jenkinsRequest([
             'POST', $this->buildUrl(URL::CANCEL_QUEUE, compact('id')),
-            ['headers' => ['Referer' => $this->url,]],
+            ['headers' => ['Referer' => $this->baseUrl,]],
         ]);
 
         return $this->getResponseTrueOrStatusCode($response);

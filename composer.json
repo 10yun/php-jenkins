@@ -1,20 +1,24 @@
 {
     "name": "yuan1994/jenkins-php",
-    "description": "Jenkins php api",
+    "description": "Jenkins PHP api",
     "type": "library",
     "authors": [
         {
-            "name": "trystan",
-            "email": "343196936@qq.com"
+            "name": "shiyun",
+            "email": "343196936@qq.com",
+            "homepage": "https://github.com/10yun/php-jenkins"
         }
     ],
     "keywords": [
         "jenkins",
+        "api",
         "cicd",
         "rest",
         "jenkins-php"
     ],
-    "homepage": "http://yuan1994.github.io/jenkins-php",
+    "homepage1": "http://yuan1994.github.io/jenkins-php",
+    "homepage2": "https://github.com/jenkins-khan/jenkins-php-api",
+    "license": "MIT",
     "require": {
         "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.3",
@@ -22,16 +26,20 @@
     },
     "autoload": {
         "psr-4": {
-            "shiyunJenkins\\": "src"
+            "shiyunJK\\": "src"
         }
     },
     "require-dev": {
+        "atoum/atoum": "2.0.1",
         "mockery/mockery": "^1.1",
         "phpunit/phpunit": "^7.2"
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "autoload-dev": {
         "psr-4": {
-            "shiyunJenkins\\Tests\\": "tests"
+            "shiyunJK\\Tests\\": "tests"
         }
     }
 }
