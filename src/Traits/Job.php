@@ -13,6 +13,7 @@ use shiyunJK\Exceptions\JenkinsException;
 trait Job
 {
     /**
+     * 查阅求职信息词典。
      * Get job information dictionary.
      *
      * @param string $name Job name
@@ -185,6 +186,7 @@ trait Job
     }
 
     /**
+     * 判断job任务是否存在
      * @param string $name
      * @return bool
      */
@@ -196,6 +198,7 @@ trait Job
     }
 
     /**
+     * 重命名已存在的job任务  
      * Rename an existing Jenkins job
      *
      * @param string $fromName Name of Jenkins job to rename
@@ -226,6 +229,7 @@ trait Job
     }
 
     /**
+     * 删除job任务  
      * Delete Jenkins job permanently.
      *
      * @param string $name Name of Jenkins job
@@ -242,6 +246,7 @@ trait Job
     }
 
     /**
+     * 启用job任务  
      * Enable Jenkins job.
      *
      * @param string $name Name of Jenkins job
@@ -258,6 +263,7 @@ trait Job
     }
 
     /**
+     * 禁用job任务
      * Disable Jenkins job.
      * To re-enable, call `Jenkins::enableJob`.
      *
@@ -275,6 +281,7 @@ trait Job
     }
 
     /**
+     * 创建一个新的job任务。   
      * Create a new Jenkins job
      *
      * @param string $name Name of Jenkins job
@@ -300,6 +307,7 @@ trait Job
     }
 
     /**
+     * 创建一个新的Jenkins文件夹。  
      * Create a new jenkins folder
      *
      * @param string $name
@@ -333,6 +341,7 @@ trait Job
     }
 
     /**
+     * 获取现有job任务的配置。  
      * Get configuration of existing Jenkins job.
      *
      * @param string $name Name of Jenkins job
@@ -353,8 +362,9 @@ trait Job
     }
 
     /**
+     * 更改现有job任务的配置。  
      * Change configuration of existing Jenkins job.
-     *
+     * 
      * @param string $name Name of Jenkins job
      * @param string $configXml New XML configuration
      * @return mixed
@@ -373,6 +383,7 @@ trait Job
     }
 
     /**
+     * 有计划地调度SCM轮询指定的job任务。  
      * Programatically schedule SCM polling for the specified job
      *
      * @param string $name Name of Jenkins job

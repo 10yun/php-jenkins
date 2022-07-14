@@ -53,18 +53,15 @@ php-jenkins 主要实现了以下功能：
 
 **任务 job**
 
-| 功能             | 方法         | 手册                        |
-| :--------------- | :----------- | :-------------------------- |
-| 判断任务是否存在 | jobExists    | [参考](./docs/job/index.md) |
-| 获取任务信息     | getJobInfo   | [参考](./docs/job/index.md) |
-| 重命名           | renameJob    | [参考](./docs/job/index.md) |
-| 创建任务         | createJob    | [参考](./docs/job/index.md) |
-| 复制已有任务     | copyJob      | [参考](./docs/job/index.md) |
-| 删除任务         | deleteJob    | [参考](./docs/job/index.md) |
-| 启用任务         | enableJob    | [参考](./docs/job/index.md) |
-| 禁用任务         | disableJob   | [参考](./docs/job/index.md) |
-| 获取配置         | getJobConfig | [参考](./docs/job/index.md) |
-| 修改配置         | reconfigJob  | [参考](./docs/job/index.md) |
+| 功能         | 英文                          | 方法                        | 手册 |
+| :----------- | :---------------------------- | :-------------------------- | :--- |
+| 创建任务     | Create new jobs               | [参考](./docs/job/index.md) |
+| 复制已有任务 | Copy existing jobs            | [参考](./docs/job/index.md) |
+| 删除任务     | Delete jobs                   | [参考](./docs/job/index.md) |
+| 更新任务     | Update jobs                   | [参考](./docs/job/index.md) |
+| 启用任务     | Enable jobs                   | [参考](./docs/job/index.md) |
+| 禁用任务     | Disable jobs                  | [参考](./docs/job/index.md) |
+| 获取任务信息 | Get a job`s build information | [参考](./docs/job/index.md) |
 
 **构建 build**
 | 功能         | 英文                     | 手册                          |

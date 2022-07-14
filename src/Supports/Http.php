@@ -12,7 +12,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Class Http
  *
- * @package Yuan994\Jenkins\Supports
+ * @package shiyunJK\Supports
  */
 class Http
 {
