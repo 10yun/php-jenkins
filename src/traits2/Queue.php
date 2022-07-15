@@ -36,20 +36,9 @@ trait Queue
     {
         $url = sprintf('queue/item/%s/cancelQueue',  $queue->getId());
 
-        $curl = curl_init($url);
-        curl_setopt($curl, \CURLOPT_POST, 1);
-
-        $headers = array();
-
-        if ($this->areCrumbsEnabled()) {
-            $headers[] = $this->getCrumbHeader();
-        }
-
-        curl_setopt($curl, \CURLOPT_HTTPHEADER, $headers);
-        curl_exec($curl);
-
-        $this->validateCurl(
-            $curl,
+        $this->curlPost(
+            $url,
+            null,
             sprintf('Error during stopping job queue #%s', $queue->getId())
         );
     }

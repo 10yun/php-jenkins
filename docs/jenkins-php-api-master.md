@@ -48,7 +48,6 @@ Here are some examples of how to use it:
 ```php
     $job = $jenkins->launchJob("clone-deploy");
     var_dump($job);
-    // bool(true) if successful or throws a RuntimeException
 ```
 
 

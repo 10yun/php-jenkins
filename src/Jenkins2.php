@@ -2,8 +2,11 @@
 
 namespace shiyunJK;
 
+use shiyunJK\traits2\Http;
+
 class Jenkins
 {
+    use Http;
     /**
      * SDK Version
      *
@@ -219,22 +222,10 @@ class Jenkins
             $executor->getComputer(),
             $executor->getNumber()
         );
-
-        $curl = curl_init($url);
-        curl_setopt($curl, \CURLOPT_POST, 1);
-
-        $headers = array();
-
-        if ($this->areCrumbsEnabled()) {
-            $headers[] = $this->getCrumbHeader();
-        }
-
-        curl_setopt($curl, \CURLOPT_HTTPHEADER, $headers);
-        curl_exec($curl);
-
-        $this->validateCurl(
-            $curl,
-            sprintf('Error during stopping executor #%s', $executor->getNumber())
+        $this->curlPost(
+            $url,
+            null,
+            sprintf('Error during stopping executor #%s',  $executor->getNumber())
         );
     }
 
@@ -354,12 +345,10 @@ class Jenkins
      */
     private function validateCurl($curl, $errorMessage)
     {
-
         if (curl_errno($curl)) {
             throw new \RuntimeException($errorMessage);
         }
         $info = curl_getinfo($curl);
-
         if ($info['http_code'] === 403) {
             throw new \RuntimeException(sprintf('Access Denied [HTTP status code 403] to %s"', $info['url']));
         }

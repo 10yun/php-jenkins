@@ -51,23 +51,11 @@ trait Job
             $url = sprintf('%s/job/%s/buildWithParameters', $this->baseUrl, $jobName);
         }
 
-        $curl = curl_init($url);
-
-        curl_setopt($curl, \CURLOPT_POST, 1);
-        curl_setopt($curl, \CURLOPT_POSTFIELDS, http_build_query($parameters));
-
-        $headers = array();
-
-        if ($this->areCrumbsEnabled()) {
-            $headers[] = $this->getCrumbHeader();
-        }
-
-        curl_setopt($curl, \CURLOPT_HTTPHEADER, $headers);
-
-        curl_exec($curl);
-
-        $this->validateCurl($curl, sprintf('Error trying to launch job "%s" (%s)', $jobName, $url));
-
+        $this->curlPost(
+            $url,
+            $parameters,
+            sprintf('Error trying to launch job "%s" (%s)', $jobName, $url)
+        );
         return true;
     }
 
@@ -112,22 +100,16 @@ trait Job
     public function deleteJob($jobName)
     {
         $url  = sprintf('%s/job/%s/doDelete', $this->baseUrl, $jobName);
-        $curl = curl_init($url);
 
-        curl_setopt($curl, \CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, \CURLOPT_POST, 1);
 
-        $headers = array();
-
-        if ($this->areCrumbsEnabled()) {
-            $headers[] = $this->getCrumbHeader();
-        }
-
-        curl_setopt($curl, \CURLOPT_HTTPHEADER, $headers);
-
-        $ret = curl_exec($curl);
-
-        $this->validateCurl($curl, sprintf('Error deleting job %s on %s', $jobName, $this->baseUrl));
+        $this->curlPost(
+            $url,
+            null,
+            sprintf('Error deleting job %s on %s', $jobName, $this->baseUrl),
+            [
+                'CURLOPT_RETURNTRANSFER' => true
+            ]
+        );
     }
 
     /**
@@ -139,6 +121,7 @@ trait Job
     public function createJob($jobname, $xmlConfiguration)
     {
         $url  = sprintf('%s/createItem?name=%s', $this->baseUrl, $jobname);
+
         $curl = curl_init($url);
         curl_setopt($curl, \CURLOPT_POST, 1);
 

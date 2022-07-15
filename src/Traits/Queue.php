@@ -13,6 +13,7 @@ use shiyunJK\Exceptions\JenkinsException;
 trait Queue
 {
     /**
+     * 获取关于排队项目(待创建的作业)的信息。
      * Get information about a queued item (to-be-created job).
      *
      * @param int $number queue number
@@ -29,6 +30,8 @@ trait Queue
     }
 
     /**
+     * 
+     * 获得队列的信息  
      * Get queue information
      *
      * @return array|bool

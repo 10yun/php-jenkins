@@ -78,24 +78,6 @@ trait Node
 
         return $this->getResponseTrueOrStatusCode($response, 200);
     }
-    public function deleteNode22222($name)
-    {
-        //  URL::DELETE_NODE
-        $url  = sprintf('computer/%s/doDelete', $name);
-        $curl = curl_init($url);
-        curl_setopt($curl, \CURLOPT_POST, 1);
-
-        $headers = array();
-
-        if ($this->areCrumbsEnabled()) {
-            $headers[] = $this->getCrumbHeader();
-        }
-
-        curl_setopt($curl, \CURLOPT_HTTPHEADER, $headers);
-        curl_exec($curl);
-
-        $this->validateCurl($curl, sprintf('Error deleting %s', $computerName));
-    }
     /**
      * Disable a node
      *
@@ -145,6 +127,8 @@ trait Node
     }
 
     /**
+     * 
+     * 创建一个节点
      * Create a node
      *
      * @param string $name Name of Jenkins node

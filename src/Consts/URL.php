@@ -18,6 +18,8 @@ class URL
     const INFO = '{folder_url}api/json';
     const PLUGIN_INFO = 'pluginManager/api/json?depth={depth}';
     const CRUMB_URL = 'crumbIssuer/api/json';
+    const CRUMB_URL_XML = '/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb) 2>/dev/null';
+
     const WHOAMI_URL = 'me/api/json?depth={depth}';
     const JOBS_QUERY = '?tree=jobs[url,color,name,jobs,fullName]';
     const JOB_INFO = '{folder_url}job/{short_name}/api/json?depth={depth}';

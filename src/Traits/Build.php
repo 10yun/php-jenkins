@@ -121,6 +121,7 @@ trait Build
     }
 
     /**
+     * 获取URL以触发构建作业。  
      * Get URL to trigger build job.
      * Authenticated setups may require configuring a token on the server side.
      *
@@ -150,6 +151,7 @@ trait Build
     }
 
     /**
+     * 触发构建工作。    
      * Trigger build job.
      * This method returns a queue item number that you can pass to
      * `Jenkins::getQueueItem`. Note that this queue number is only
@@ -186,6 +188,7 @@ trait Build
     }
 
     /**
+     * 停止运行Jenkins构建。  
      * Stop a running Jenkins build.
      *
      * @param string $name Name of Jenkins job
