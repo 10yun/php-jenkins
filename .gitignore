@@ -1,4 +1,5 @@
 /.project
+/.idea
 .idea
 .git
 /.git
@@ -9,6 +10,8 @@ composer.phar
 .phpunit.result.cache
 vendor
 vendor/*
+/vendor
 /vendor/
 
 logs
+/runtime
