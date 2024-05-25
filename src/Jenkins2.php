@@ -9,55 +9,38 @@ class Jenkins
     use Http;
     /**
      * SDK Version
-     *
-     * @var string
      */
     const VERSION = '1.0.0';
 
     /**
      * Jenkins Base URL
-     *
-     * @var string
      */
-    protected $baseUrl;
+    protected string $baseUrl;
 
     /**
-     * @var null
      */
-    private $jenkins = null;
+    private null|mixed $jenkins = null;
 
     /**
      * Whether or not to retrieve and send anti-CSRF crumb tokens
      * with each request
-     *
      * Defaults to false for backwards compatibility
-     *
-     * @var boolean
      */
-    private $crumbsEnabled = false;
+    private boolean $crumbsEnabled = false;
 
     /**
      * The anti-CSRF crumb to use for each request
-     *
      * Set when crumbs are enabled, by requesting a new crumb from Jenkins
-     *
-     * @var string
      */
-    private $crumb;
+    private string $crumb;
 
     /**
      * The header to use for sending anti-CSRF crumbs
-     *
      * Set when crumbs are enabled, by requesting a new crumb from Jenkins
-     *
-     * @var string
      */
-    private $crumbRequestField;
+    private string $crumbRequestField;
 
-    /**
-     * @param string $baseUrl
-     */
-    public function __construct($baseUrl)
+    public function __construct(string $baseUrl)
     {
         $this->baseUrl = $baseUrl;
     }

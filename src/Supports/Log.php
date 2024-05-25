@@ -13,9 +13,8 @@ use Monolog\Logger;
 class Log
 {
     /**
-     * @var array
      */
-    protected static $config = [
+    protected array static $config = [
         'level'      => 'debug',
         'permission' => 0777,
         'file'       => '/tmp/jenkins-php.log',

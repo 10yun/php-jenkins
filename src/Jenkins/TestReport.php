@@ -18,14 +18,11 @@ class TestReport
     protected $testReport;
 
     /**
-     * @var string
      */
-    protected $jobName;
-
+    protected string $jobName;
     /**
-     * @var int
      */
-    protected $buildNumber;
+    protected int $buildNumber;
 
     /**
      * __construct

@@ -18,24 +18,18 @@ class Jenkins
 {
     /**
      * SDK Version
-     *
-     * @var string
      */
     const VERSION = '1.0.0';
 
     /**
      * Jenkins Base URL
-     *
-     * @var string
      */
-    protected $baseUrl;
+    protected string $baseUrl;
 
     /**
      * Config
-     *
-     * @var array
      */
-    protected $config = [];
+    protected array $config = [];
 
     /**
      * Http Client
@@ -43,16 +37,12 @@ class Jenkins
      * @var \shiyunJK\Supports\Http
      */
     protected $http;
-
     /**
-     * @var array
      */
-    protected $crumb = null;
-
+    protected null|array $crumb = null;
     /**
-     * @var null|string
      */
-    protected $authorization = null;
+    protected null|string $authorization = null;
 
     use Base, Build, Job, Node, Promotion, Queue, View;
 

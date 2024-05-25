@@ -26,9 +26,8 @@ class Http
     /**
      * GuzzleHttp Middleware
      *
-     * @var array
      */
-    protected $middleware = [];
+    protected array $middleware = [];
 
     /**
      * @var \GuzzleHttp\HandlerStack
@@ -147,8 +146,8 @@ class Http
             return json_decode(json_encode(simplexml_load_string($contents)), true);
         }
         // 尝试强制json_decode
-        $json = json_decode($contents, true);
-        if (json_last_error() === 0) {
+        if (json_validate($contents)) {
+            $json = json_decode($contents, true);
             return $json;
         }
 

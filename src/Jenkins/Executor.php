@@ -12,10 +12,7 @@ class Executor
      */
     private $executor;
 
-    /**
-     * @var string
-     */
-    protected $computer;
+    protected string $computer;
 
     /**
      * @param \stdClass $executor
