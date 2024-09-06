@@ -9,7 +9,7 @@ This projects follows PSR-0, PSR-1, PSR-2, PSR-4
 
 ## 快速安装
 
-```
+```sh
 composer require shiyun/php-jenkins
 ```
 
