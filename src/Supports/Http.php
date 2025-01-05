@@ -183,7 +183,8 @@ class Http
                 if (is_array($middleware)) {
                     // Library提供的中间件
                     if (in_array($middleware[0], [
-                        'logMiddleware', 'retryMiddleware'
+                        'logMiddleware',
+                        'retryMiddleware'
                     ])) {
                         $middleware = call_user_func([$this, $middleware[0]]);
                     }
@@ -221,7 +222,7 @@ class Http
         return Middleware::retry(function (
             $retries,
             RequestInterface $request,
-            ResponseInterface $response = null
+            ResponseInterface|null $response = null
         ) {
             if ($retries < $this->middleware['retry']['config']['times']) {
                 if ($response->getStatusCode() >= 500) {

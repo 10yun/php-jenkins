@@ -53,7 +53,7 @@ class Jenkins
      * @param array  $config
      * @param Http   $http
      */
-    public function __construct($url, array $config = [], Http $http = null)
+    public function __construct($url, array $config = [], Http|null $http = null)
     {
         $this->baseUrl = rtrim($url, '/') . '/';
 
@@ -184,7 +184,8 @@ class Jenkins
         if (is_null($this->crumb)) {
             try {
                 $response = $this->jenkinsOpen([
-                    'GET', $this->buildUrl(URL::CRUMB_URL)
+                    'GET',
+                    $this->buildUrl(URL::CRUMB_URL)
                 ], false);
                 if ($response) {
                     $this->crumb = $response;
