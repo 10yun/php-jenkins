@@ -1,22 +1,9 @@
 {
     "name": "shiyun/php-jenkins",
-    "description": "Jenkins PHP api",
-    "version": "1.0.1",
     "type": "library",
-    "authors": [
-        {
-            "name": "10yun",
-            "email": "240337740@qq.com",
-            "homepage": "https://www.10yun.com/"
-        },
-        {
-            "name": "trystan"
-        },
-        {
-            "name": "ctocode",
-            "email": "343196936@qq.com"
-        }
-    ],
+    "version": "1.0.1",
+    "license": "MIT",
+    "description": "Jenkins PHP api",
     "keywords": [
         "jenkins",
         "api",
@@ -24,20 +11,39 @@
         "rest",
         "jenkins-php"
     ],
+    "authors": [
+        {
+            "name": "10yun",
+            "email": "git@10yun.com",
+            "homepage": "https://www.10yun.com/"
+        },
+        {
+            "name": "ctocode",
+            "email": "343196936@qq.com",
+            "homepage": "http://ctocode.com/"
+        }
+    ],
     "homepage": "https://github.com/10yun/php-jenkins",
-    "license": "MIT",
+    "support": {
+        "source": "https://github.com/10yun/php-jenkins",
+        "issues": "https://github.com/10yun/php-jenkins/issues",
+        "package": "https://packagist.org/packages/shiyun/php-jenkins",
+        "forum": "https://docs.10yun.com/php/",
+        "wiki": "https://docs.10yun.com/php/",
+        "email": "343196936@qq.com"
+    },
     "require": {
         "php": "^8",
-        "guzzlehttp/guzzle": "^7.2"
+        "guzzlehttp/guzzle": "^7"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.1",
+        "phpunit/phpunit": "^7.2"
     },
     "autoload": {
         "psr-4": {
             "shiyunJK\\": "src"
         }
-    },
-    "require-dev": {
-        "mockery/mockery": "^1.1",
-        "phpunit/phpunit": "^7.2"
     },
     "autoload-dev": {
         "psr-4": {
